@@ -23,7 +23,7 @@ const AppRouter = () => {
     <ThemeContext.Provider
       value={{
         value: theme,
-        handleClick: value => setTheme(value)
+        setValue: value => setTheme(value)
       }}
     >
       <Router>

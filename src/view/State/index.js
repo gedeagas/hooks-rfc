@@ -62,13 +62,13 @@ export default function Example() {
           {capitalize(theme.value)}
         </Text>
 
-        <Button color="black" onClick={() => theme.handleClick("black")}>
+        <Button color="black" onClick={() => theme.setValue("black")}>
           <Text>Black</Text>
         </Button>
-        <Button color="blue" onClick={() => theme.handleClick("blue")}>
+        <Button color="blue" onClick={() => theme.setValue("blue")}>
           <Text>Blue</Text>
         </Button>
-        <Button color="red" onClick={() => theme.handleClick("red")}>
+        <Button color="red" onClick={() => theme.setValue("red")}>
           <Text>Red</Text>
         </Button>
       </Wrapper>
