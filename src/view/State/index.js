@@ -29,7 +29,6 @@ export default function Example() {
   });
 
   function getRandomArbitrary(min, max) {
-    console.log(theme.value);
     return Math.ceil(Math.random() * (max - min) + min);
   }
 
