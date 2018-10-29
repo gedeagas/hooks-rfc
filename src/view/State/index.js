@@ -1,9 +1,8 @@
-import React from "react";
-import { useState, useEffect, useContext } from "react";
-import styled, { css } from "styled-components";
+import React, {useState, useEffect, useContext} from 'react';
+import styled from 'styled-components';
 
-import { ThemeContext } from "../../index";
-import { Text, Box, Button } from "../../uikit";
+import {ThemeContext} from '../../index';
+import {Text, Box, Button} from '../../uikit';
 
 const Wrapper = styled.div`
   padding: 10px;
@@ -13,13 +12,13 @@ const Wrapper = styled.div`
   flex: 1;
 `;
 
-export default function Example() {
+const State = () => {
   // Declare a new state variable, which we'll call "count"
   const [count, setCount] = useState(0);
   const theme = useContext(ThemeContext);
 
   const capitalize = ([first, ...rest]) =>
-    first.toUpperCase() + rest.join("").toLowerCase();
+    first.toUpperCase() + rest.join('').toLowerCase();
 
   useEffect(() => {
     // Update the document title using the browser API
@@ -33,13 +32,13 @@ export default function Example() {
   }
 
   return (
-    <div style={{ display: "flex" }}>
+    <div style={{display: 'flex'}}>
       <Wrapper>
         <Box background={theme.value}>
           <Text size="24px" weight="700">
             Detak Jantung
           </Text>
-          <div style={{ marginTop: "40px", marginBottom: "40px" }}>
+          <div style={{marginTop: '40px', marginBottom: '40px'}}>
             <Text size="40px">{count}</Text>
             <br />
             <Text size="18px">bpm</Text>
@@ -50,8 +49,7 @@ export default function Example() {
 
         <Button
           color="gray"
-          onClick={() => setCount(getRandomArbitrary(85, 120))}
-        >
+          onClick={() => setCount(getRandomArbitrary(85, 120))}>
           <Text>Record</Text>
         </Button>
       </Wrapper>
@@ -61,16 +59,18 @@ export default function Example() {
           {capitalize(theme.value)}
         </Text>
 
-        <Button color="black" onClick={() => theme.setValue("black")}>
+        <Button color="black" onClick={() => theme.setValue('black')}>
           <Text>Black</Text>
         </Button>
-        <Button color="blue" onClick={() => theme.setValue("blue")}>
+        <Button color="blue" onClick={() => theme.setValue('blue')}>
           <Text>Blue</Text>
         </Button>
-        <Button color="red" onClick={() => theme.setValue("red")}>
+        <Button color="red" onClick={() => theme.setValue('red')}>
           <Text>Red</Text>
         </Button>
       </Wrapper>
     </div>
   );
-}
+};
+
+export default State;

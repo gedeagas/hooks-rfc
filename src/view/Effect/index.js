@@ -1,15 +1,22 @@
-import React from "react";
-import { useState } from "react";
+import React, {useState, useContext, useEffect} from 'react';
+import {ThemeContext} from '../../index';
+import {Button, Text} from '../../uikit';
 
-export default function Example() {
-  // Declare a new state variable, which we'll call "count"
-  const [count, setCount] = useState(0);
+export default function Effect() {
+  const theme = useContext(ThemeContext);
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    document.title = `${loading ? 'True' : 'False'} - HHH`;
+  });
 
   return (
     <div>
-      <p>Hook API</p>
-      <p>You clicked {count} times</p>
-      <button onClick={() => setCount(count + 1)}>Click me</button>
+      {theme.value}
+      <h1>{loading ? 'True' : 'False'}</h1>
+      <Button color="gray" onClick={() => theme.setValue('asu')}>
+        <Text>Record</Text>
+      </Button>
     </div>
   );
 }
